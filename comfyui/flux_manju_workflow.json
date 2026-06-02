@@ -1,0 +1,124 @@
+{
+  "last_node_id": 16,
+  "last_link_id": 22,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "UNETLoader",
+      "pos": [50, 200],
+      "size": [310, 60],
+      "outputs": [{"name": "MODEL", "type": "MODEL", "links": [14]}],
+      "widgets_values": ["flux1-dev.safetensors", "fp8_e4m3fn"]
+    },
+    {
+      "id": 2,
+      "type": "DualCLIPLoader",
+      "pos": [50, 320],
+      "size": [310, 80],
+      "outputs": [{"name": "CLIP", "type": "CLIP", "links": [3, 4]}],
+      "widgets_values": ["clip_l.safetensors", "t5xxl_fp8_e4m3fn.safetensors", "flux"]
+    },
+    {
+      "id": 3,
+      "type": "VAELoader",
+      "pos": [50, 450],
+      "size": [310, 60],
+      "outputs": [{"name": "VAE", "type": "VAE", "links": [12]}],
+      "widgets_values": ["ae.safetensors"]
+    },
+    {
+      "id": 4,
+      "type": "CLIPTextEncode",
+      "pos": [420, 200],
+      "size": [500, 160],
+      "inputs": [{"name": "clip", "type": "CLIP", "link": 3}],
+      "outputs": [{"name": "CONDITIONING", "type": "CONDITIONING", "links": [16]}],
+      "widgets_values": ["anime manga style, beautiful female character, long black hair, red dress, standing in cherry blossom garden, detailed face, expressive eyes, cinematic lighting, high quality illustration"]
+    },
+    {
+      "id": 5,
+      "type": "CLIPTextEncode",
+      "pos": [420, 400],
+      "size": [500, 100],
+      "inputs": [{"name": "clip", "type": "CLIP", "link": 4}],
+      "outputs": [{"name": "CONDITIONING", "type": "CONDITIONING", "links": [17]}],
+      "widgets_values": ["blurry, low quality, deformed, ugly, bad anatomy, extra limbs, watermark, text"]
+    },
+    {
+      "id": 6,
+      "type": "EmptyLatentImage",
+      "pos": [420, 540],
+      "size": [310, 100],
+      "outputs": [{"name": "LATENT", "type": "LATENT", "links": [5]}],
+      "widgets_values": [832, 1216, 1]
+    },
+    {
+      "id": 7,
+      "type": "ModelSamplingFlux",
+      "pos": [420, 680],
+      "size": [310, 100],
+      "inputs": [{"name": "model", "type": "MODEL", "link": 14}],
+      "outputs": [{"name": "MODEL", "type": "MODEL", "links": [18]}],
+      "widgets_values": [1.15, 0.5]
+    },
+    {
+      "id": 8,
+      "type": "FluxGuidance",
+      "pos": [420, 820],
+      "size": [310, 60],
+      "inputs": [{"name": "conditioning", "type": "CONDITIONING", "link": 16}],
+      "outputs": [{"name": "CONDITIONING", "type": "CONDITIONING", "links": [19]}],
+      "widgets_values": [3.5]
+    },
+    {
+      "id": 9,
+      "type": "KSampler",
+      "pos": [800, 400],
+      "size": [400, 300],
+      "inputs": [
+        {"name": "model", "type": "MODEL", "link": 18},
+        {"name": "positive", "type": "CONDITIONING", "link": 19},
+        {"name": "negative", "type": "CONDITIONING", "link": 17},
+        {"name": "latent_image", "type": "LATENT", "link": 5}
+      ],
+      "outputs": [{"name": "LATENT", "type": "LATENT", "links": [20]}],
+      "widgets_values": [42, "fixed", 25, 1.0, "euler", "simple", 1.0]
+    },
+    {
+      "id": 10,
+      "type": "VAEDecode",
+      "pos": [1260, 400],
+      "size": [210, 60],
+      "inputs": [
+        {"name": "samples", "type": "LATENT", "link": 20},
+        {"name": "vae", "type": "VAE", "link": 12}
+      ],
+      "outputs": [{"name": "IMAGE", "type": "IMAGE", "links": [21]}]
+    },
+    {
+      "id": 11,
+      "type": "SaveImage",
+      "pos": [1520, 400],
+      "size": [400, 400],
+      "inputs": [{"name": "images", "type": "IMAGE", "link": 21}],
+      "widgets_values": ["manju/"]
+    }
+  ],
+  "links": [
+    [3, 2, 0, 4, 0, "CLIP"],
+    [4, 2, 0, 5, 0, "CLIP"],
+    [5, 6, 0, 9, 3, "LATENT"],
+    [12, 3, 0, 10, 1, "VAE"],
+    [14, 1, 0, 7, 0, "MODEL"],
+    [16, 4, 0, 8, 0, "CONDITIONING"],
+    [17, 5, 0, 9, 2, "CONDITIONING"],
+    [18, 7, 0, 9, 0, "MODEL"],
+    [19, 8, 0, 9, 1, "CONDITIONING"],
+    [20, 9, 0, 10, 0, "LATENT"],
+    [21, 10, 0, 11, 0, "IMAGE"]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {"ds": {"scale": 0.8, "offset": [0, 0]}},
+  "version": 0.4
+}
