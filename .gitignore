@@ -1,0 +1,25 @@
+# 虚拟环境
+.venv/
+
+# ComfyUI安装（模型太大，用setup脚本重建）
+ComfyUI/models/
+ComfyUI/custom_nodes/ComfyUI-Manager/
+ComfyUI/output/
+ComfyUI/input/
+ComfyUI/temp/
+ComfyUI/user/
+ComfyUI/.git/
+
+# kohya_ss（第三方工具）
+kohya_ss/
+
+# 生成的输出（图片/视频太大）
+output/
+
+# LoRA模型文件 → 传到HuggingFace
+lora/output/*.safetensors
+
+# 缓存
+__pycache__/
+*.pyc
+.cache/

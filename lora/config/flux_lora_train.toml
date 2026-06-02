@@ -1,30 +1,32 @@
-# FLUX.1 LoRA 训练配置 - 针对漫剧角色一致性优化
 [Model]
 pretrained_model_name_or_path = "/home/lejurobot/ai-manju/ComfyUI/models/diffusion_models/flux1-dev.safetensors"
-clip_l                         = "/home/lejurobot/ai-manju/ComfyUI/models/text_encoders/clip_l.safetensors"
-t5xxl                          = "/home/lejurobot/ai-manju/ComfyUI/models/text_encoders/t5xxl_fp8_e4m3fn.safetensors"
-ae                             = "/home/lejurobot/ai-manju/ComfyUI/models/vae/ae.safetensors"
-output_dir                     = "/home/lejurobot/ai-manju/lora/output"
-output_name                    = "character01_v1"
+clip_l = "/home/lejurobot/ai-manju/ComfyUI/models/text_encoders/clip_l.safetensors"
+t5xxl  = "/home/lejurobot/ai-manju/ComfyUI/models/text_encoders/t5xxl_fp8_e4m3fn.safetensors"
+ae     = "/home/lejurobot/ai-manju/ComfyUI/models/vae/ae.safetensors"
+output_dir  = "/home/lejurobot/ai-manju/lora/output"
+output_name = "wukong_v1"
 
 [Network]
 network_module = "networks.lora_flux"
-network_dim    = 16       # 角色LoRA推荐16-32
-network_alpha  = 16
+network_dim   = 16
+network_alpha = 16
 
 [Training]
 learning_rate   = 0.0004
-max_train_steps = 1000    # 20-50张图用1000步，更多图片适当增加
-train_batch_size = 1      # 16GB显存可以用2
+max_train_steps = 1000
+train_batch_size = 1
 gradient_checkpointing = true
 mixed_precision = "bf16"
 optimizer_type  = "adamw8bit"
 cache_latents   = true
 cache_text_encoder_outputs = true
 
+# 关键：把部分 transformer block 换到 CPU（62GB内存足够）
+blocks_to_swap = 20
+
 [Dataset]
 train_data_dir = "/home/lejurobot/ai-manju/lora/dataset/character_01"
-resolution     = "512,768"  # 竖屏漫剧比例
+resolution     = "512,768"
 enable_bucket  = true
 
 [Save]
