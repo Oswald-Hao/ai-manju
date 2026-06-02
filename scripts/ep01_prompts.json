@@ -1,0 +1,114 @@
+[
+  {
+    "shot": 1,
+    "desc": "开场·星空光柱",
+    "prompt": "epic black starry sky, massive golden light pillar descending from heaven, ancient chinese mythology atmosphere, cinematic, manga style, dramatic lighting",
+    "negative": "modern, technology, text, watermark",
+    "size": "832x1216",
+    "seed": 1001
+  },
+  {
+    "shot": 2,
+    "desc": "悟空登场·云端异变",
+    "prompt": "sun_wukong, monkey king, riding golden cloud nimbus, surprised expression, alert eyes, black smoke vortex forming below feet, anime manga style, dynamic pose, detailed face",
+    "negative": "blurry, ugly, deformed, multiple characters",
+    "size": "832x1216",
+    "seed": 1002
+  },
+  {
+    "shot": 3,
+    "desc": "坠入异界",
+    "prompt": "sun_wukong, monkey king, falling through dark swirling vortex, ancient chinese text glyphs floating around, silhouettes of mythical beasts, motion blur, dramatic, manga style",
+    "negative": "blurry, ugly, deformed",
+    "size": "832x1216",
+    "seed": 1003
+  },
+  {
+    "shot": 4,
+    "desc": "落地荒古森林",
+    "prompt": "sun_wukong, monkey king, landing in ancient primordial forest, massive trees like mountains, golden spores floating in air, wide angle, character looks small against giant environment, manga style",
+    "negative": "modern, blurry, ugly",
+    "size": "1216x832",
+    "seed": 1004
+  },
+  {
+    "shot": 5,
+    "desc": "环境探索",
+    "prompt": "sun_wukong, monkey king, standing on giant mushroom, looking around cautiously, hand shielding eyes, strange creatures silhouettes in distant mountains, mysterious atmosphere, manga style",
+    "negative": "blurry, ugly, deformed",
+    "size": "832x1216",
+    "seed": 1005
+  },
+  {
+    "shot": 6,
+    "desc": "危机出现·地面颤抖",
+    "prompt": "ground cracking and shaking, massive dark shadow looming over small figure of sun_wukong, trees toppling in background, low angle dramatic shot, tension, manga style, horror atmosphere",
+    "negative": "blurry, ugly",
+    "size": "832x1216",
+    "seed": 1006
+  },
+  {
+    "shot": 7,
+    "desc": "饕餮登场",
+    "prompt": "taotie ancient chinese beast, massive monster with giant head and no body, four claws on ground, molten lava eyes, black dripping fangs, breaking through forest, epic monster design, manga style, shan hai jing mythology, dark dramatic lighting",
+    "negative": "cute, friendly, modern, blurry",
+    "size": "1216x832",
+    "seed": 1007
+  },
+  {
+    "shot": 8,
+    "desc": "悟空挑战表情",
+    "prompt": "sun_wukong, monkey king, close up face, grinning confidently, eyes fierce, holding golden staff ruyi jingu bang, ready to fight, manga style, dramatic lighting, detailed expression",
+    "negative": "blurry, ugly, multiple people",
+    "size": "832x1216",
+    "seed": 1008
+  },
+  {
+    "shot": 9,
+    "desc": "战斗开始·躲避",
+    "prompt": "sun_wukong, monkey king, leaping through air dodging black corrosive breath attack, dynamic action pose, motion lines, taotie monster below breathing dark mist, manga action scene, speed lines",
+    "negative": "blurry, ugly, static",
+    "size": "1216x832",
+    "seed": 1009
+  },
+  {
+    "shot": 10,
+    "desc": "激战·金箍棒重击",
+    "prompt": "sun_wukong, monkey king, golden staff ruyi jingu bang smashing taotie monster forehead, golden sparks explosion, slow motion impact moment, manga style, dramatic impact effect, cinematic",
+    "negative": "blurry, ugly",
+    "size": "1216x832",
+    "seed": 1010
+  },
+  {
+    "shot": 11,
+    "desc": "饕餮复原变大",
+    "prompt": "taotie monster wound healing instantly, body expanding growing larger, roaring with mouth wide open, sun_wukong looking shocked in foreground small, manga style, horror, dark power",
+    "negative": "blurry, cute, friendly",
+    "size": "832x1216",
+    "seed": 1011
+  },
+  {
+    "shot": 12,
+    "desc": "悟空蓄力",
+    "prompt": "sun_wukong, monkey king, fire eyes golden pupils activated huǒ yǎn jīn jīng, golden aura surrounding body, spinning golden staff gathering energy, dramatic 360 camera angle, manga style, power up scene",
+    "negative": "blurry, ugly, weak",
+    "size": "832x1216",
+    "seed": 1012
+  },
+  {
+    "shot": 13,
+    "desc": "三头六臂终结一击",
+    "prompt": "sun_wukong, monkey king, three heads six arms transformation, six golden staffs striking down simultaneously, massive golden light pillar explosion, bird eye view, epic finale attack, manga style, shan hai jing background",
+    "negative": "blurry, ugly, weak",
+    "size": "1216x832",
+    "seed": 1013
+  },
+  {
+    "shot": 14,
+    "desc": "结尾悬念",
+    "prompt": "sun_wukong, monkey king, standing alone in ruins aftermath, distant view, nine light pillars rising simultaneously on horizon, character small against vast mythological world, mysterious atmosphere, manga style, epic wide shot",
+    "negative": "blurry, ugly, crowded",
+    "size": "1216x832",
+    "seed": 1014
+  }
+]
